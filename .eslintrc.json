@@ -1,0 +1,131 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier",
+    "import",
+    "modules-newline"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "semi": ["error", "never"],
+    "no-await-in-loop": "error",
+    "no-case-declarations": "off",
+    "no-underscore-dangle": "off",
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/prefer-regexp-exec": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "no-useless-escape": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "import/namespace": "off",
+    "import/no-named-as-default": "off",
+    "import/no-unresolved": "off",
+    "import/no-named-as-default-member": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin"
+          },
+          {
+            "pattern": "react-native",
+            "group": "builtin"
+          },
+          {
+            "pattern": "@navigation/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@screens/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@states/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@hooks/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@components/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@services/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@constants/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@graphql/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@helpers/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@assets/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@interfaces/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
+}

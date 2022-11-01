@@ -1,0 +1,1 @@
+install library [fantasticon](https://github.com/tancredi/fantasticon)

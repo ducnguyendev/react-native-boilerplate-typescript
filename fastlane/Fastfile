@@ -1,0 +1,30 @@
+before_all do |lane, options|
+  Dotenv.load(".env.#{ENV['ENV']}")
+end
+
+platform :ios do
+  lane :update_config do
+    xcodeproj = "#{ENV['IOS_PROJECT_PATH']}/#{ENV['IOS_PROJECT_NAME']}.xcodeproj"
+    plist_path = "#{ENV['IOS_PROJECT_NAME']}/Info.plist"
+    puts "✡️ xcodeprojc => " + xcodeproj
+    puts "☪️ plist_path => " + plist_path
+
+    update_app_identifier(
+      xcodeproj: xcodeproj,
+      plist_path: plist_path,
+      app_identifier: ENV['IOS_APP_ID'],
+    )
+    update_info_plist(
+      xcodeproj: xcodeproj,
+      plist_path: plist_path,
+      block: lambda { |plist|
+        plist['CFBundleName'] = ENV['IOS_APP_NAME']
+        plist['CFBundleDisplayName'] = ENV['IOS_APP_NAME']
+        plist['CFBundleShortVersionString'] = ENV['APP_VERSION']
+      },
+    )
+  end
+end
+
+platform :android do
+end

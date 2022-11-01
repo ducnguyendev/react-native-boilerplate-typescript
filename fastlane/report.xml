@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: update_app_identifier" time="0.057915">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: update_info_plist" time="0.007462">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
